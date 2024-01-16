@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useContext } from "react";
 import { cartContext } from "../../context/CartContext";
 import { db } from "../../firebase/firebase";
@@ -25,6 +25,7 @@ const Venta = () => {
     whatsApp: " ",
   };
 
+  
   const [values, setValues] = useState(initialSatateValues);
 
   const handleInputChange = (e) => {
@@ -61,7 +62,7 @@ const Venta = () => {
     finalizarVenta();
   };
 
-  const buySend = () => {
+  const buySend = useCallback(() => {
     Swal.fire({
       icon: "success",
       title: "Confirmación",
@@ -74,13 +75,13 @@ const Venta = () => {
         return navigate("/");
       }
     });
-  };
+  }, [idVenta, clearCart, navigate]);
 
   useEffect(() => {
     if (idVenta) {
       buySend();
     }
-  }, [idVenta]);
+  }, [idVenta, buySend]);
 
   return (
     <form className="formulario" onSubmit={handleSubmit}>
