@@ -10,14 +10,14 @@ const CartCustomProvider = ({ children }) => {
 
   useEffect(() => {
     const localData = JSON.parse(localStorage.getItem("carritoMariArt"));
-    setProductsCart(localData || []);
+    setProductsCart(localData);
   }, []);
 
   useEffect(() => {
     getQtyCarProducts();
     getTotalProducts();
     localStorage.setItem("carritoMariArt", JSON.stringify(productsCart));
-  }, [productsCart, getQtyCarProducts, getTotalProducts]);
+  }, [productsCart]);
 
   const addCartProduct = (product) => {
     if (isInCart(product.id)) {
