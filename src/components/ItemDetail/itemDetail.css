@@ -1,0 +1,47 @@
+.detail {
+  display: grid;
+  grid-template-columns: 350px 710px;
+  column-gap: 1.5rem;
+  align-items: center;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.detail-img {
+  margin-top: 0.5rem;
+  width: 350px;
+  height: 452px;
+}
+
+.detail-product {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(220, 218, 218);
+  text-align: center;
+  padding: 3.5rem 2rem;
+  height: 452px;
+}
+
+.detail-text {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.detail-title {
+  margin: 1rem 0;
+  color: rgb(214, 51, 51);
+  font-size: 1.8rem;
+}
+
+.detail-precio {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.detail-stock {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: rgb(77, 72, 72);
+}
