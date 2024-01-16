@@ -5,6 +5,8 @@ import { db } from "../../firebase/firebase";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import FadeLoader from "react-spinners/FadeLoader";
 import "./ItemListContainer.css";
+// import { FadeLoader } from 'react-spinners';
+
 
 const ItemListContainer = ({ mensaje }) => {
   const [productList, setProductList] = useState([]);
