@@ -14,13 +14,27 @@ const CartCustomProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    const getQtyCarProducts = () => {
+      let qty = 0;
+      productsCart.forEach((productCart) => (qty += productCart.cantidad));
+      setQtyProducts(qty);
+    };
+
+    const getTotalProducts = () => {
+      let total = 0;
+      productsCart.forEach(
+        (productCart) => (total += productCart.cantidad * productCart.precio)
+      );
+      setTotalProducts(total);
+    };
+
     getQtyCarProducts();
     getTotalProducts();
     localStorage.setItem("carritoMariArt", JSON.stringify(productsCart));
   }, [productsCart]);
 
   const addCartProduct = (product) => {
-    if (isInCart(product.id)) {
+if (isInCart(product.id)) {
       const found = productsCart.find((producto) => producto.id === product.id);
       const index = productsCart.indexOf(found);
       const aux = [...productsCart];
@@ -32,30 +46,16 @@ const CartCustomProvider = ({ children }) => {
   };
 
   const deleteCartProduct = (id) => {
-    const aux = productsCart.filter((productCart) => productCart.id !== id);
+ const aux = productsCart.filter((productCart) => productCart.id !== id);
     setProductsCart(aux);
   };
 
   const isInCart = (id) => {
-    return productsCart.some((productCar) => productCar.id === id);
-  };
-
-  const getQtyCarProducts = () => {
-    let qty = 0;
-    productsCart.forEach((productCart) => (qty += productCart.cantidad));
-    setQtyProducts(qty);
-  };
-
-  const getTotalProducts = () => {
-    let total = 0;
-    productsCart.forEach(
-      (productCart) => (total += productCart.cantidad * productCart.precio)
-    );
-    setTotalProducts(total);
+return productsCart.some((productCar) => productCar.id === id);
   };
 
   const clearCart = () => {
-    setProductsCart([]);
+setProductsCart([]);
     setQtyProducts(0);
     setTotalProducts(0);
   };
