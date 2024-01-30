@@ -1,5 +1,6 @@
 .cart {
   display: flex;
+  
 }
 
 .cart-cantidad {
@@ -19,3 +20,4 @@
   height: 28px;
   width: 33px;
 }
+

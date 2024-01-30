@@ -2,7 +2,12 @@ body {
   background-image: url(https://i.postimg.cc/02SXz50Y/Todo-lo-que-merezca-voy-a-recibirlo-pantalla-principal-1.png);
   background-repeat: no-repeat;
   background-size:cover;
-
+}
+.img-fondo{
+  background-image: url(https://i.postimg.cc/02SXz50Y/Todo-lo-que-merezca-voy-a-recibirlo-pantalla-principal-1.png);
+  background-repeat: no-repeat;
+  background-size:cover;
+  transform: rotate(90deg);
 }
 
 .container-product {
@@ -33,13 +38,13 @@ body {
   text-align: center;
   margin-bottom: 0.5rem;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 400px) {
   body {
-    background-image: url(https://i.postimg.cc/02SXz50Y/Todo-lo-que-merezca-voy-a-recibirlo-pantalla-principal-1.png);
+    background-image: url(https://i.postimg.cc/PqdWbzZb/Todo-lo-que-merezca-voy-a-recibirlo-pantalla-principal-1.png);
     background-repeat: no-repeat;
     background-size:cover;
     max-height: 100%;
     max-width: 100%; 
-   /* Asegura que la imagen no sea más ancha que el 100% de la pantalla */
+       /* Asegura que la imagen no sea más ancha que el 100% de la pantalla */
   }
 }

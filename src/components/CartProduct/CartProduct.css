@@ -8,6 +8,8 @@
   justify-content: space-between;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 .product-text {
@@ -24,4 +26,41 @@
 .btn-dark:hover {
   background-color: rgb(131, 12, 12);
   border-color: rgb(131, 12, 12);
+}
+
+
+/* Media query para pantallas más pequeñas, como dispositivos móviles */
+@media only screen and (max-width: 400px) {
+  .product {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    border: 1.5px solid rgb(202, 179, 179);
+    margin: auto;
+    padding: 0.5rem 0.rem;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.8); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+  
+  .product-text {
+    font-size: 1.3rem;
+    margin-left: 2rem;
+    font-weight: bold;
+
+  }
+  
+  .product-label {
+    color: rgb(214, 51, 51);
+    margin-right: 0.3rem;
+  }
+  
+  .btn-dark:hover {
+    background-color: rgb(131, 12, 12);
+    border-color: rgb(131, 12, 12);
+  }
+  
 }
