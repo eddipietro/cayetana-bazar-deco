@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { db } from "../../firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
 
+
+
 const NavBar = () => {
   const [categoriesList, setCategoriesList] = useState([]);
 
