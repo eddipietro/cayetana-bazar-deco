@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList.jsx";
 import { db } from "../../firebase/firebase";
 import { getDocs, collection, query, where } from "firebase/firestore";
-import FadeLoader from "react-spinners/FadeLoader";
+//import FadeLoader from "react-spinners/FadeLoader";
 import "./ItemListContainer.css";
 
 const ItemListContainer = ({ mensaje }) => {

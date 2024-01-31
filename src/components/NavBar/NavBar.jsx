@@ -38,27 +38,10 @@ const categories = [
 ];
 
 const NavBar = () => {
-  const [categoriesList, setCategoriesList] = useState([]);
-
-  useEffect(() => {
-    const categoriesCollection = collection(db, "categorias");
-    getDocs(categoriesCollection)
-      .then((result) => {
-        const listCategories = result.docs.map((category) => {
-          return {
-            id: category.id,
-            ...category.data(),
-          };
-        });
-        setCategoriesList(listCategories);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
   return (
-    <div className="nav">
+    <section className="nav">
+
+  
             <Link  to="/#">
             <img className="logo" src="./caye-removebg-preview.png" alt="cayetana" />
       </Link>
@@ -73,7 +56,8 @@ const NavBar = () => {
         </ul>
       </div>
       <CartWidget />
-    </div>
+ 
+  </section>
   );
 };
 
