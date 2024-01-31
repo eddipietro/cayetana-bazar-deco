@@ -33,7 +33,7 @@ const ItemDetail = ({ product }) => {
         <div>
           {prodAdded ? (
             <>
-              <img src="osito-matero.gif" className="gif" alt="Cargando" />
+              {/* <img src="osito-matero.gif" className="gif" alt="Cargando" /> */}
               <Link to="/cart">
                 <button className="btn btn-dark">Ver Carrito</button>
               </Link>

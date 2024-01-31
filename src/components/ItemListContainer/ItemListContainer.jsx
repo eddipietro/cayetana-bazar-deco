@@ -54,7 +54,7 @@ const ItemListContainer = ({ mensaje }) => {
     <div className="categoria">
       {categoryId ? <h2>{categoryId}</h2> : <h2>{mensaje}</h2>}
       {loading ? (
-        <img src="osito-matero.gif" className="gif" alt="Cargando" />
+        <img src="osito-matero.gif" className="gif"  alt="Cargando" />
       ) : (
         <>
           <ItemList productList={productList} />
