@@ -5,8 +5,6 @@ import { db } from "../../firebase/firebase";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import FadeLoader from "react-spinners/FadeLoader";
 import "./ItemListContainer.css";
-// import { FadeLoader } from 'react-spinners';
-
 
 const ItemListContainer = ({ mensaje }) => {
   const [productList, setProductList] = useState([]);
@@ -17,44 +15,46 @@ const ItemListContainer = ({ mensaje }) => {
   const productsConsultRef = useRef();
 
   useEffect(() => {
-    const productsCollection = collection(db, "productos");
+    const fetchData = async () => {
+      const productsCollection = collection(db, "productos");
 
-    if (categoryId) {
-      const productsQuery = query(
-        productsCollection,
-        where("categoria", "==", categoryId)
-      );
-      // Asigna la referencia a productsConsultRef.current
-      productsConsultRef.current = productsQuery;
-    } else {
-      // Asigna la referencia a productsConsultRef.current
-      productsConsultRef.current = productsCollection;
-    }
+      if (categoryId) {
+        const productsQuery = query(
+          productsCollection,
+          where("categoria", "==", categoryId)
+        );
+        // Asigna la referencia a productsConsultRef.current
+        productsConsultRef.current = productsQuery;
+      } else {
+        // Asigna la referencia a productsConsultRef.current
+        productsConsultRef.current = productsCollection;
+      }
 
-    getDocs(productsConsultRef.current)
-      .then((result) => {
+      try {
+        const result = await getDocs(productsConsultRef.current);
         const listProducts = result.docs.map((product) => ({
           id: product.id,
           ...product.data(),
         }));
         setProductList(listProducts);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.log(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+      } finally {
+        // Agrega un tiempo de espera de 3 segundos (ajusta según tus necesidades)
+        setTimeout(() => {
+          setLoading(false);
+        }, 2500);
+      }
+    };
+
+    fetchData();
   }, [categoryId]);
 
   return (
     <div className="categoria">
       {categoryId ? <h2>{categoryId}</h2> : <h2>{mensaje}</h2>}
       {loading ? (
-        <div className="spinner">
-          <FadeLoader color="#756d6d" size={150} />
-          <span>Cargando...</span>
-        </div>
+        <img src="osito-matero.gif" className="gif" alt="Cargando" />
       ) : (
         <>
           <ItemList productList={productList} />

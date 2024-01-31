@@ -10,7 +10,10 @@ const ItemDetail = ({ product }) => {
 
   const onAdd = (amount) => {
     addCartProduct({ ...product, cantidad: amount });
-    setProdAdded(true);
+    // Simulamos un tiempo de carga de 3 segundos antes de mostrar el gif
+    setTimeout(() => {
+      setProdAdded(true);
+    }, 3000);
   };
 
   return (
@@ -29,9 +32,12 @@ const ItemDetail = ({ product }) => {
         </p>
         <div>
           {prodAdded ? (
-            <Link to="/cart">
-              <button className="btn btn-dark">Ver Carrito</button>
-            </Link>
+            <>
+              <img src="osito-matero.gif" className="gif" alt="Cargando" />
+              <Link to="/cart">
+                <button className="btn btn-dark">Ver Carrito</button>
+              </Link>
+            </>
           ) : (
             <ItemCount stock={product.stock} onAdd={onAdd} />
           )}

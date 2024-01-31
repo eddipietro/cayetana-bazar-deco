@@ -7,6 +7,36 @@ import { getDocs, collection } from "firebase/firestore";
 
 
 
+
+const categories = [
+
+  {
+    id: 2,
+    path: "/category/Mates",
+    name: "Mates",
+  },
+  {
+    id: 3,
+    path: "/category/Bombillas",
+    name: "Bombillas",
+  },
+  {
+    id: 4,
+    path: "/category/Ferias",
+    name: "Ferias",
+  },
+  {
+    id: 5,
+    path: "/category/Termos",
+    name: "Termos",
+  },  ,
+  {
+    id: 6,
+    path: "/category/Sets Materos",
+    name: "Sets Materos",
+  },
+];
+
 const NavBar = () => {
   const [categoriesList, setCategoriesList] = useState([]);
 
@@ -35,7 +65,7 @@ const NavBar = () => {
 
       <div className="nav-items">
         <ul className="nav">
-          {categoriesList.map((category) => (
+          {categories.map((category) => (
             <li key={category.id}>
               <Link to={category.path}>{category.name}</Link>
             </li>

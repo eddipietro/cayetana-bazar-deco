@@ -31,7 +31,7 @@
 }
 
 
-@media only screen and (max-width: 400px) {
+@media (min-width: 350px) and (max-width: 500px){
 
   .formulario {
     margin-top: 2rem;

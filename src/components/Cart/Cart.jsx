@@ -1,5 +1,4 @@
-import React from "react";
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { cartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import CartProduct from "../CartProduct/CartProduct";
@@ -11,7 +10,10 @@ const Cart = () => {
   const [buyFinalized, setBuyFinalized] = useState(false);
 
   const finishBuy = () => {
-    setBuyFinalized(true);
+    // Simulamos un tiempo de carga de 3 segundos antes de mostrar el gif
+    setTimeout(() => {
+      setBuyFinalized(true);
+    }, 3000);
   };
 
   if (productsCart.length === 0) {
@@ -46,7 +48,10 @@ const Cart = () => {
         </div>
         <div>
           {buyFinalized ? (
-            <Venta />
+            <>
+              <img src="osito-matero.gif" className="gif" alt="Cargando" />
+              <Venta />
+            </>
           ) : (
             <div className="cart-element">
               <button onClick={finishBuy} className="btn btn-dark">

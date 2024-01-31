@@ -50,7 +50,24 @@
   color: rgb(77, 72, 72);
 }
 
-@media only screen and (max-width: 400px) {
+.gif {
+  width:10%;
+  margin-left: 45%;
+  margin-top: 3%;
+  animation: mostrarGif 0.5s ease-in-out 3; /* duración y repeticiones de la animación */
+}
+
+@keyframes mostrarGif {
+  0% {
+    opacity: 0; /* empieza con opacidad cero */
+  }
+  100% {
+    opacity: 1; /* termina con opacidad completa */
+  }
+
+}
+
+@media (min-width: 350px) and (max-width: 500px){
   .detail {
     display: flex;
     flex-direction: column;
