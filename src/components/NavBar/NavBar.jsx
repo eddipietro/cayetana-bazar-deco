@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-import { db } from "../../firebase/firebase";
-import { getDocs, collection } from "firebase/firestore";
+// import { db } from "../../firebase/firebase";
+// import { getDocs, collection } from "firebase/firestore";
 
 
 
