@@ -29,12 +29,12 @@ const categories = [
     id: 5,
     path: "/category/Termos",
     name: "Termos",
-  },  ,
+  },  
   {
     id: 6,
     path: "/category/Sets Materos",
     name: "Sets Materos",
-  },
+  }
 ];
 
 const NavBar = () => {
