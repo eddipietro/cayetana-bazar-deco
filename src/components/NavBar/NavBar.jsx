@@ -1,4 +1,4 @@
-// import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
@@ -38,26 +38,39 @@ const categories = [
 ];
 
 const NavBar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <section className="nav">
+    <section className={`nav ${menuOpen ? 'menu-open' : ''}`}>
+      <div className="nav-container" id="nav-container">
+        <Link to="/">
+          <img className="logo" src="./caye-removebg-preview.png" alt="cayetana" />
+        </Link>
 
-  
-            <Link  to="/#">
-            <img className="logo" src="./caye-removebg-preview.png" alt="cayetana" />
-      </Link>
+        <div className={`nav-icons ${menuOpen ? 'center-menu' : ''}`}>
+          <button className="menu-icon" onClick={toggleMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <CartWidget className="cart-icon"  id="cart-icon" />
+        </div>
 
-      <div className="nav-items">
-        <ul className="nav">
-          {categories.map((category) => (
-            <li key={category.id}>
-              <Link to={category.path}>{category.name}</Link>
-            </li>
-          ))}
-        </ul>
+        <div className={`nav-items ${menuOpen ? 'show-menu' : ''}`}>
+          <ul className="nav">
+            {categories.map((category) => (
+              <li key={category.id}>
+                <Link to={category.path}>{category.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <CartWidget />
- 
-  </section>
+    </section>
   );
 };
 

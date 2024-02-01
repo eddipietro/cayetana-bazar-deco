@@ -21,3 +21,26 @@
   width: 33px;
 }
 
+@media (min-width: 501px) {
+  .cart {
+    position: absolute;
+    top: 35%;
+    right: -98%; /* Ajusta la posición horizontal según sea necesario */
+    display: flex;
+    align-items: center; /* Ajusta según sea necesario para centrar verticalmente */
+  }
+
+  .btn-carrito {
+    height: 45px;
+    width: 50px;
+  }
+
+  .btn-carrito:hover {
+    height: 28px;
+    width: 33px;
+  }
+
+  .cart-cantidad {
+    margin-top: 0; /* Ajusta el margen superior según sea necesario */
+  }
+}

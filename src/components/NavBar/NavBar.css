@@ -9,10 +9,21 @@
   height: 7rem;
   line-height: 1.3rem;
 }
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 10px; /* Ajusta el padding según sea necesario */
+}
 
 .nav-items {
-  padding-right: 2rem; /* Ajuste para pantallas más pequeñas */
-  font-weight: 700;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #f8dada;
 }
 
 a {
@@ -31,12 +42,60 @@ a:hover {
   width: auto; /* Ajuste para pantallas más pequeñas */
 }
 
+.menu-icon {
+  display: none; /* Oculta el botón de menú en pantallas más grandes */
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.menu-icon span {
+  display: block;
+  height: 3px;
+  width: 25px;
+  background-color: #2e2d2d;
+  margin: 5px 0;
+}
+.nav-icons {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon,
+.cart-icon {
+  margin-left: 0; /* Ajusta el margen según sea necesario */
+}
+.show-menu .nav-items {
+  display: block;
+}
+.show-menu .nav-items ul {
+  flex-direction: column;
+}
+.center-menu {
+  justify-content: center;
+}
+
 /* Media query para pantallas más pequeñas, como dispositivos móviles */
 @media (min-width: 350px) and (max-width: 500px){
   .nav {
     flex-direction: column;
     align-items: flex-start;
     height: auto;
+  }
+  .menu-icon {
+display: block; /* Muestra el botón de menú en pantallas más pequeñas */
+  }
+
+
+  .nav-icons {
+    margin-left: 0; /* Ajusta el margen según sea necesario */
+    margin-right: 0; /* Ajusta el margen según sea necesario */
+  }
+
+  .nav.menu-open .nav-items {
+    display: block;
   }
 
   .nav-items {
@@ -50,5 +109,60 @@ a:hover {
 
   .logo {
     height: 150px; /* Ajuste para pantallas más pequeñas */
+  }
+  .nav-icons {
+    margin-left: 30%; /* Mueve los iconos al margen derecho */
+    margin-right: 10px; /* Centra los iconos verticalmente */
+  }
+}
+
+/* Media query para pantallas mayores a 500px */
+@media (min-width: 501px) {
+  #nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    position: relative; /* Agrega posición relativa al contenedor principal */
+  }
+
+  #nav-container .logo {
+    order: 1; /* Cambia el orden del logo a primero */
+  }
+
+  #nav-container .nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Ajusta para alinear en la parte superior */
+    order: 2; /* Cambia el orden de las categorías a segundo */
+    position: absolute;
+    top: 45px; /* Ajusta la posición vertical según sea necesario */
+    left: 55%;
+  }
+
+  #cart-icon {
+    order: 3;
+    position: relative;
+    top: 45px;
+    right: 180px !important; /* Ajusta la posición horizontal según sea necesario */
+  }
+
+  #nav-container .nav-items ul {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  #nav-container .nav-items li {
+    margin: 0;
+  }
+
+  #cart-icon {
+    order: 3;
+    position: relative;
+    top: 45px;
+    right: 180px !important; /* Ajusta la posición horizontal según sea necesario */
   }
 }
