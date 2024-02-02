@@ -13,7 +13,7 @@ const ItemDetail = ({ product }) => {
     // Simulamos un tiempo de carga de 3 segundos antes de mostrar el gif
     setTimeout(() => {
       setProdAdded(true);
-    }, 3000);
+    }, 0);
   };
 
   return (

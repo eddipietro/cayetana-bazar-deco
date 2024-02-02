@@ -51,16 +51,26 @@ const ItemListContainer = ({ mensaje }) => {
   }, [categoryId]);
 
   return (
+    <>
+      {/* Este h2 seria el banner que ingresade izquierda mostrando el nombre de la seccion */}
+     
+
     <div className="categoria">
-      {categoryId ? <h2>{categoryId}</h2> : <h2>{mensaje}</h2>}
+      
       {loading ? (
         <img src="osito-matero.gif" className="gif"  alt="Cargando" />
       ) : (
         <>
+     <h2 className="reboteIn_izquierda">{mensaje}{categoryId} </h2>
+
           <ItemList productList={productList} />
         </>
       )}
     </div>
+
+    </>
+
+
   );
 };
 

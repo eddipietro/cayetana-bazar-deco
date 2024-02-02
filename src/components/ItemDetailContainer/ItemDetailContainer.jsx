@@ -29,7 +29,7 @@ const ItemDetailContainer = () => {
         // Agrega un tiempo de espera de 3 segundos (ajusta según tus necesidades)
         setTimeout(() => {
           setLoading(false);
-        }, 1000);
+        }, 500);
       }
     };
 

@@ -13,7 +13,7 @@ const Cart = () => {
     // Simulamos un tiempo de carga de 3 segundos antes de mostrar el gif
     setTimeout(() => {
       setBuyFinalized(true);
-    }, 3000);
+    }, 0);
   };
 
   if (productsCart.length === 0) {
@@ -49,7 +49,7 @@ const Cart = () => {
         <div>
           {buyFinalized ? (
             <>
-              <img src="osito-matero.gif" className="gif" alt="Cargando" />
+              {/* <img src="osito-matero.gif" className="gif" alt="Cargando" /> */}
               <Venta />
             </>
           ) : (
