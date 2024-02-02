@@ -30,7 +30,7 @@
 
 
 /* Media query para pantallas más pequeñas, como dispositivos móviles */
-@media only screen and (max-width: 400px) {
+@media (min-width: 350px) and (max-width: 500px){
   .product {
     display: flex;
     flex-direction: column;

@@ -8,7 +8,7 @@ const CartProduct = ({ product }) => {
   return (
     <div className="product">
       <div>
-        <img src={product.img} width="50px" alt={product.nombre} />
+        <img src={product.img} width="150px" alt={product.nombre} />
       </div>
       <p className="product-text">
         <label className="product-label">Producto: </label>
