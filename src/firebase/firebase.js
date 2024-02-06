@@ -8,6 +8,7 @@ const firebaseConfig = {
   storageBucket: "cayetana-deco.appspot.com",
   messagingSenderId: "554851448286",
   appId: "1:554851448286:web:de44b9b210711bfc97d94f",
+
 };
 
 const app = initializeApp(firebaseConfig);

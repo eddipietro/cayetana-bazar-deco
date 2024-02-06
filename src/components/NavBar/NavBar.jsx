@@ -9,16 +9,19 @@ import { Link } from "react-router-dom";
 
 
 const categories = [
-
   {
+    id: 1,
+    path: "/category/Bombillas",
+    name: "Bombillas",
+  },  {
     id: 2,
-    path: "/category/Mates",
-    name: "Mates",
+    path: "/category/Canastas Materas",
+    name: "Canastas Materas",
   },
   {
     id: 3,
-    path: "/category/Bombillas",
-    name: "Bombillas",
+    path: "/category/Cayetana por el Mundo",
+    name: "Cayetana por el Mundo",
   },
   {
     id: 4,
@@ -27,13 +30,18 @@ const categories = [
   },
   {
     id: 5,
-    path: "/category/Termos",
-    name: "Termos",
+    path: "/category/Mates",
+    name: "Mates",
   },  
   {
     id: 6,
     path: "/category/Sets Materos",
     name: "Sets Materos",
+  },  
+  {
+    id: 7,
+    path: "/category/Termos",
+    name: "Termos",
   }
 ];
 
