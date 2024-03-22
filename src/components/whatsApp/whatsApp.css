@@ -1,0 +1,23 @@
+#whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+  
+  #whatsapp-button img {
+    width: 100px; /* Puedes ajustar el tamaño según tus preferencias */
+    height: auto;
+  }
+
+  /* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  #whatsapp-button {
+    bottom: 10px; /* Ajusta la posición para dispositivos móviles */
+    right: 10px; /* Ajusta la posición para dispositivos móviles */
+  }
+
+  #whatsapp-button img {
+    width: 70px; /* Tamaño reducido para dispositivos móviles */
+  }
+}

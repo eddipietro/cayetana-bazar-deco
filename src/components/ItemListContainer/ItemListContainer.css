@@ -37,7 +37,7 @@ h2 {
 
 .reboteIn_izquierda {
   font-family: Arial;
-  background-image: url("https://i.postimg.cc/9QMLXqLt/banner.jpg");
+  background-image: url("https://i.postimg.cc/tCX0nkV1/Proyecto-nuevo-2.jpg");
   background-size: cover; /* Hace que la imagen cubra todo el contenedor sin distorsionarla */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   opacity: 10;
@@ -93,7 +93,9 @@ h2 {
     padding-top: 1.5rem;
   }
   .reboteIn_izquierda {
-  margin: 20px 20px;
+    margin: 20px 20px;
     height: 200px;
+    background-image: url("https://i.postimg.cc/8zqn4z9J/mate.jpg");
   }
+
   }
