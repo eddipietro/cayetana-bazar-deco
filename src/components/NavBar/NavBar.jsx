@@ -35,14 +35,27 @@ const categories = [
   },  
   {
     id: 6,
+    path: "/category/Mates personalizados",
+    name: "Mates personalizados",
+  },
+  {
+    id: 7,
+    path: "/category/Porta mates",
+    name: "Porta mates",
+  },  
+
+  {
+    id: 8,
     path: "/category/Sets Materos",
     name: "Sets Materos",
   },  
   {
-    id: 7,
+    id: 9,
     path: "/category/Termos",
     name: "Termos",
   }
+
+  
 ];
 
 const NavBar = () => {
