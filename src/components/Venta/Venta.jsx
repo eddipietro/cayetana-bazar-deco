@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useContext } from "react";
 import { cartContext } from "../../context/CartContext";
 import { db } from "../../firebase/firebase";
@@ -10,23 +10,23 @@ import {
   doc,
   updateDoc,
 } from "firebase/firestore";
-
 import Swal from "sweetalert2";
+import emailjs from '@emailjs/browser';
 import "./Venta.css";
 
 const Venta = () => {
   const { productsCart, totalProducts, clearCart } = useContext(cartContext);
   const [idVenta, setIdVenta] = useState("");
   const navigate = useNavigate();
-  const initialSatateValues = {
-    nombre: " ",
-    apellido: " ",
-    email: " ",
-    whatsApp: " ",
+  const initialStateValues = {
+    nombre: "",
+    apellido: "",
+    email: "",
+    whatsApp: "",
   };
 
-  
-  const [values, setValues] = useState(initialSatateValues);
+  const [values, setValues] = useState(initialStateValues);
+  const form = useRef();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -57,8 +57,20 @@ const Venta = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
+
+    emailjs
+      .sendForm('service_ujyzslf', 'template_xf8nu4s', form.current, 'YZK8Cq2BEe9Ti2lhn')
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        }
+      );
+
     finalizarVenta();
   };
 
@@ -84,13 +96,14 @@ const Venta = () => {
   }, [idVenta, buySend]);
 
   return (
-    <form className="formulario" onSubmit={handleSubmit}>
+    <form ref={form} className="formulario" onSubmit={sendEmail}>
       <div className="titulo-text">Ingresá tus Datos</div>
       <input
         type="text"
         className="Input"
         placeholder="Ingrese Nombre"
         name="nombre"
+        value={values.nombre}
         onChange={handleInputChange}
         required
       />
@@ -99,25 +112,29 @@ const Venta = () => {
         className="Input"
         placeholder="Ingrese Apellido"
         name="apellido"
+        value={values.apellido}
         onChange={handleInputChange}
         required
       />
       <input
-        type="e_mail"
+        type="email"
         className="Input"
         placeholder="Ingrese Email"
         name="email"
+        value={values.email}
         onChange={handleInputChange}
         required
       />
-            <input
+      <input
         type="number"
         className="Input"
         placeholder="Ingrese WhatsApp"
         name="whatsApp"
+        value={values.whatsApp}
         onChange={handleInputChange}
         required
       />
+      <textarea name="message" value={`Compra realizada por: \n  Nombre: ${values.nombre} \n Apellido: ${values.apellido} \n  Email: ${values.email}  \n WhatsApp: ${values.whatsApp}`} hidden readOnly />
       <button className="btn btn-dark formSubmit">Enviar Compra</button>
     </form>
   );
