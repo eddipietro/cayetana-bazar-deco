@@ -61,7 +61,7 @@ const Venta = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_ujyzslf', 'template_xf8nu4s', form.current, 'YZK8Cq2BEe9Ti2lhn')
+      .sendForm('service_ujyzslf', 'template_s96oywn', form.current, 'YZK8Cq2BEe9Ti2lhn')
       .then(
         () => {
           console.log('SUCCESS!');
