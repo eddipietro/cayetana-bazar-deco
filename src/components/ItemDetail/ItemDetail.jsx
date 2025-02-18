@@ -3,6 +3,7 @@ import "./itemDetail.css";
 import { cartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { FaTag } from "react-icons/fa"; // Importamos el ícono de la etiqueta de oferta
 
 const ItemDetail = ({ product }) => {
   const [prodAdded, setProdAdded] = useState(false);
@@ -10,11 +11,12 @@ const ItemDetail = ({ product }) => {
 
   const onAdd = (amount) => {
     addCartProduct({ ...product, cantidad: amount });
-    // Simulamos un tiempo de carga de 3 segundos antes de mostrar el gif
     setTimeout(() => {
       setProdAdded(true);
     }, 0);
   };
+
+  const tieneOferta = product.oferta !== undefined && product.oferta < product.precio;
 
   return (
     <div className="detail">
@@ -24,16 +26,30 @@ const ItemDetail = ({ product }) => {
       <div className="detail-product">
         <h5 className="detail-title">{product.nombre}</h5>
         <p className="detail-text">{product.descripcion}</p>
+        
+        {/* Mostrar precio y oferta si aplica */}
         <p className="detail-precio">
-          $ <span>{product.precio}</span>
+          {tieneOferta ? (
+            <>
+              <span className="precio-original">${product.precio}</span>
+              <span className="precio-oferta">${product.oferta}</span>
+            </>
+          ) : (
+            <>$ <span>{product.precio}</span></>
+          )}
         </p>
+
+        {/* Mostrar stock */}
         <p className="detail-stock">
           Stock: <span>{product.stock}</span>
         </p>
+
+        {/* Mostrar el ícono de oferta si aplica */}
+        {tieneOferta && <div className="etiqueta-oferta"><FaTag /> Oferta</div>}
+        
         <div>
           {prodAdded ? (
             <>
-              {/* <img src="osito-matero.gif" className="gif" alt="Cargando" /> */}
               <Link to="/cart">
                 <button className="btn btn-dark">Ver Carrito</button>
               </Link>

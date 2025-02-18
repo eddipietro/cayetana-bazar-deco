@@ -44,7 +44,12 @@ body {
     margin-top: 3%;
     animation: mostrarGif 0.5s ease-in-out 2; /* duración y repeticiones de la animación */
   }
-  
+  .sinDescuento{
+    color: red;
+  }
+  .descuento{
+    color: green;
+  }
   @keyframes mostrarGif {
     0% {
       opacity: 0; /* empieza con opacidad cero */

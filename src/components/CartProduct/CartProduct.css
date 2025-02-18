@@ -1,66 +1,48 @@
 .product {
   display: flex;
-  width: 800px;
-  border: 1.5px solid rgb(230, 223, 223);
-  margin: auto;
-  padding: 0.3rem 0.3rem;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.8); 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  flex-direction: column;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px;
+}
+
+.product-oferta {
+  border: 2px solid red;
+  background-color: #f8d7da; /* Fondo para productos con descuento */
 }
 
 .product-text {
-  font-size: 1.3rem;
-  margin-left: 2rem;
-  font-weight: bold;
+  margin: 5px 0;
 }
 
 .product-label {
-  color: rgb(214, 51, 51);
-  margin-right: 0.3rem;
+  font-weight: bold;
 }
 
-.btn-dark:hover {
-  background-color: rgb(131, 12, 12);
-  border-color: rgb(131, 12, 12);
+.precio-oferta {
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
 }
 
-
-/* Media query para pantallas más pequeñas, como dispositivos móviles */
-@media (min-width: 350px) and (max-width: 500px){
-  .product {
-    display: flex;
-    flex-direction: column;
-    width: 380px;
-    border: 1.5px solid rgb(202, 179, 179);
-    margin: auto;
-    padding: 0.5rem 0.rem;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 0.5rem;
-    margin-bottom: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.8); 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+.precio-original {
+  text-decoration: line-through;
+  color: gray;
 }
-  
-  .product-text {
-    font-size: 1.3rem;
-    margin-left: 2rem;
-    font-weight: bold;
 
-  }
-  
-  .product-label {
-    color: rgb(214, 51, 51);
-    margin-right: 0.3rem;
-  }
-  
-  .btn-dark:hover {
-    background-color: rgb(131, 12, 12);
-    border-color: rgb(131, 12, 12);
-  }
-  
+.oferta {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: red;
+}
+
+.oferta span {
+  margin-left: 5px;
+}
+
+.product .btn {
+  align-self: flex-start;
 }
