@@ -1,28 +1,19 @@
-
-
 .gif {
-  width:12% !important;
+  width: 12% !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-/* 
-  margin-left: 42% !important;
-  margin-top: 3%; */
-      animation: mostrarGif 0.5s ease-in-out 3; /* duración y repeticiones de la animación */
-    }
-
-    @keyframes mostrarGif {
-      0% {
-        opacity: 0; /* empieza con opacidad cero */
-      }
-      100% {
-        opacity: 1; /* termina con opacidad completa */
-      }
-
+  animation: mostrarGif 0.5s ease-in-out 3; /* duración y repeticiones de la animación */
 }
 
-
-
+@keyframes mostrarGif {
+  0% {
+    opacity: 0; /* empieza con opacidad cero */
+  }
+  100% {
+    opacity: 1; /* termina con opacidad completa */
+  }
+}
 
 h2 {
   color: rgb(255, 255, 255);
@@ -30,72 +21,81 @@ h2 {
   padding-bottom: 1.3rem;
   text-align: center;
   font-weight: bold;
-  -webkit-text-stroke: 2px black;
+  font-family: 'Montserrat', sans-serif; /* Tipografía moderna */
   font-size: 50px;
-  z-index: -1;
+  z-index: 1;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Sombra en el texto */
+  letter-spacing: 2px; /* Espaciado entre letras para hacerlo más estilizado */
 }
 
 .reboteIn_izquierda {
-  font-family: Arial;
-  background-image: url("https://i.postimg.cc/tCX0nkV1/Proyecto-nuevo-2.jpg");
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor sin distorsionarla */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  opacity: 10;
+  background-image: url("https://i.postimg.cc/qvqK2LFh/Proyecto-nuevo-4.jpg");
+  background-size: cover; /* Hace que la imagen cubra el contenedor */
+  background-position: center; /* Centra la imagen en el contenedor */
+  background-repeat: no-repeat;
   position: relative;
   margin: 50px 50px;
   line-height: 150px;
   height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: reboteIn_izquierda 3s forwards, fadeIn 1s ease-in-out 1s;
 }
 
-/* Asignamos las animaciones */
-
-.reboteIn_izquierda {
- 
-  animation: reboteIn_izquierda 3s 1;
- 
-}
-
-
-
-/* Creamos la animación ReboteIn Izquierda (con keyframes) */
-
+/* Animación de rebote desde la izquierda */
 @keyframes reboteIn_izquierda {
- 
   0% {
-    opacity: 0;
     transform: translateX(-100vw);
+    opacity: 0;
   }
-  
+
   50% {
-    
     transform: translateX(30px);
     opacity: 1;
   }
-  
+
   70% {
-    
     transform: translateX(-10px);
-      
   }
-  
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-
-@media (min-width: 350px) and (max-width: 500px){
+@media (min-width: 350px) and (max-width: 500px) {
   .gif {
-    width:40% !important;
+    width: 40% !important;
     margin-left: 30% !important;
     margin-top: 3%;
-   }
+  }
 
-   h2 {
+  h2 {
     padding-top: 1.5rem;
-  }
-  .reboteIn_izquierda {
-    margin: 20px 20px;
-    height: 200px;
-    background-image: url("https://i.postimg.cc/8zqn4z9J/mate.jpg");
+    font-size: 35px; /* Ajuste de tamaño para pantallas pequeñas */
   }
 
+  .reboteIn_izquierda {
+
+    background-image: url("https://i.postimg.cc/8CBrS0JY/Presentaci-n-Proyecto-Trabajo-Doodle-Org-nico-Multicolor-3.jpg");
+    margin: 20px 20px;
+    height: 200px; /* Ajustamos la altura para pantallas pequeñas */
+    background-size: 180%; /* Aumenta el tamaño de la imagen para "hacer zoom" */
+    background-position: center; /* Centra la imagen */
+    border-radius: 10px;
+    animation: reboteIn_izquierda 2s forwards, fadeIn 1s ease-in-out 0.5s;
   }
+}

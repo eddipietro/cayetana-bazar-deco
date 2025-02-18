@@ -1,15 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaTag } from "react-icons/fa"; // Importamos un ícono de etiqueta
 import "./Item.css";
 
 const Item = ({ product }) => {
+  const tieneOferta = product.oferta !== undefined && product.oferta < product.precio;
+
   return (
-    <div className="item">
+    <div className={`item ${tieneOferta ? "item-oferta" : ""}`}>
+      {tieneOferta && <span className="etiqueta-oferta"><FaTag /> Oferta</span>}
       <img src={product.img} className="item-img" alt={product.nombre} />
       <div className="item-body">
         <h5 className="item-title">{product.nombre}</h5>
         <p className="item-precio">
-          $ <span>{product.precio}</span>
+          {tieneOferta ? (
+            <>
+              <span className="precio-original">${product.precio}</span> 
+              <span className="precio-oferta"> ${product.oferta}</span>
+            </>
+          ) : (
+            <>$ <span>{product.precio}</span></>
+          )}
         </p>
         <p className="item-stock">
           Stock: <span>{product.stock}</span>

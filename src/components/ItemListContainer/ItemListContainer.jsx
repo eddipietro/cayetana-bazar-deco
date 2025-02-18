@@ -5,6 +5,7 @@ import { db } from "../../firebase/firebase";
 import { getDocs, collection, query, where } from "firebase/firestore";
 //import FadeLoader from "react-spinners/FadeLoader";
 import "./ItemListContainer.css";
+import { Link } from "react-router-dom";
 
 const ItemListContainer = ({ mensaje }) => {
   const [productList, setProductList] = useState([]);
@@ -61,7 +62,11 @@ const ItemListContainer = ({ mensaje }) => {
         <img src="osito-matero.gif" className="gif"  alt="Cargando" />
       ) : (
         <>
-     <h2 className="reboteIn_izquierda">{mensaje}{categoryId} </h2>
+
+              <Link to="../promos">
+                   <h2 className="reboteIn_izquierda">{mensaje}{categoryId} </h2>
+              </Link>
+    
 
           <ItemList productList={productList} />
         </>

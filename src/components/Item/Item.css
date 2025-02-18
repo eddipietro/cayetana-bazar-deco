@@ -1,4 +1,5 @@
 .item {
+  position: relative; /* Para colocar la etiqueta de oferta arriba */
   width: 20rem;
   border-width: 1px;
   border-style: solid;
@@ -6,8 +7,32 @@
   display: flex;
   flex-direction: column;
   border-radius: 2%;
-  background-color: rgba(255, 255, 255, 0.8); 
+  background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo cuando el producto tiene oferta */
+.item-oferta {
+  background-color: rgba(255, 223, 186, 0.9); /* Fondo resaltado */
+  border-color: rgb(255, 166, 0);
+  box-shadow: 0 0 15px rgba(255, 166, 0, 0.8);
+}
+
+/* Icono de oferta */
+.etiqueta-oferta {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .item-body {
@@ -20,14 +45,31 @@
   height: auto;
   padding-left: 1.6rem;
 }
+
 .item-title {
   color: rgb(214, 51, 51);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
+
 .item-precio {
   font-weight: bold;
   font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.precio-original {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 1rem;
+}
+
+.precio-oferta {
+  color: red;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-top: 0.2rem;
 }
 
 .item-stock {
@@ -50,7 +92,7 @@
   justify-content: center;
 }
 
-@media (min-width: 350px) and (max-width: 500px){
+@media (min-width: 350px) and (max-width: 500px) {
   body, html {
     height: 100%;
     margin: 0;
@@ -68,7 +110,6 @@
     align-items: center;
     justify-content: center;
     margin-left: 10%;
-
   }
 
   .item-body {
