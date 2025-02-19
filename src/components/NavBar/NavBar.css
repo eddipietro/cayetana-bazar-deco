@@ -8,6 +8,8 @@
   list-style-type: none;
   height: 7rem;
   line-height: 1.3rem;
+  position: relative;
+  z-index: 1000;
 }
 .nav-container {
   display: flex;
@@ -24,6 +26,7 @@
   left: 0;
   width: 100%;
   background-color: #f8dada;
+  z-index: 1001;
 }
 
 a {
@@ -63,6 +66,9 @@ a:hover {
   align-items: center;
 }
 
+.show-menu {
+  display: block;
+}
 .menu-icon,
 .cart-icon {
   margin-left: 0; /* Ajusta el margen según sea necesario */

@@ -64,7 +64,7 @@ const ItemListContainer = ({ mensaje }) => {
         <>
 
               <Link to="../promos">
-                   <h2 className="reboteIn_izquierda">{mensaje}{categoryId} </h2>
+                   <h2 className="reboteIn_izquierda">{mensaje} </h2>
               </Link>
     
 

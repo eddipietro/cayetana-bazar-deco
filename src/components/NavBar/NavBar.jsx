@@ -82,13 +82,16 @@ const NavBar = () => {
         </div>
 
         <div className={`nav-items ${menuOpen ? 'show-menu' : ''}`}>
-          <ul className="nav">
-            {categories.map((category) => (
-              <li key={category.id}>
-                <Link to={category.path}>{category.name}</Link>
-              </li>
-            ))}
-          </ul>
+                <ul className="nav">
+          {categories.map((category) => (
+            <li key={category.id}>
+              <Link to={category.path} onClick={() => setMenuOpen(false)}>
+                {category.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
         </div>
       </div>
     </section>
